@@ -11,8 +11,7 @@
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs =
-    inputs: let
+  outputs = inputs: let
     lib = inputs.snowfall-lib.mkLib {
       inherit inputs;
 
