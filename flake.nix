@@ -9,8 +9,8 @@
   };
 
   outputs =
-    inputs:
-    inputs.snowfall-lib.mkFlake {
+    inputs: let
+    lib = inputs.snowfall-lib.mkLib {
       inherit inputs;
 
       src = ./.;
@@ -18,10 +18,14 @@
       snowfall = rec {
         namespace = "caprinix";
 
-        meta = {    
+        meta = {
           name = namespace;
           title = namespace;
         };
       };
+    };
+  in
+    lib.mkFlake {
+      
     };
 }
