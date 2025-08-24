@@ -1,5 +1,31 @@
 {
   "nodes": {
+    "caprinix-essentials": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "snowfall-lib": [
+          "snowfall-lib"
+        ],
+        "treefmt-nix": [
+          "treefmt-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1756036035,
+        "narHash": "sha256-7AizYO3WabJwqZ/m8zNpPlUbn/M6GRINL46I3u6QD6E=",
+        "owner": "caprinix",
+        "repo": "essentials",
+        "rev": "fe5b83d9d45545880f50102185a1dfcae31203da",
+        "type": "github"
+      },
+      "original": {
+        "owner": "caprinix",
+        "repo": "essentials",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -71,6 +97,7 @@
     },
     "root": {
       "inputs": {
+        "caprinix-essentials": "caprinix-essentials",
         "nixpkgs": "nixpkgs",
         "snowfall-lib": "snowfall-lib",
         "treefmt-nix": "treefmt-nix"
