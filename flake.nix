@@ -19,5 +19,14 @@
             inherit inputs;
 
             src = ./.;
+
+            snowfall = {
+                namespace = "caprinix";
+
+                meta = {
+                    name = "caprinix-snowfall-lib-starter";
+                    title = "Caprinix - snowfall-lib-starter";
+                };
+            };
         };
 }
