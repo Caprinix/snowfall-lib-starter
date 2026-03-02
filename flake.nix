@@ -37,5 +37,11 @@
                 };
             };
         };
-        in lib.mkFlake {};
+        in lib.mkFlake {
+          outputs-builder = channels: let
+            treefmtEval = inputs.treefmt-nix.lib.evalModule channels.nixpkgs ./treefmt.nix;
+          in {
+            formatter = treefmtEval.config.build.wrapper;
+          };
+        };
 }
