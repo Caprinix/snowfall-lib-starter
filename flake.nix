@@ -21,27 +21,27 @@
     };
   };
 
-  outputs = inputs:
-        let
-        lib = inputs.snowfall-lib.mkLib {
-            inherit inputs;
+  outputs = inputs: let
+    lib = inputs.snowfall-lib.mkLib {
+      inherit inputs;
 
-            src = ./.;
+      src = ./.;
 
-            snowfall = {
-                namespace = "caprinix";
+      snowfall = {
+        namespace = "caprinix";
 
-                meta = {
-                    name = "caprinix-snowfall-lib-starter";
-                    title = "Caprinix - snowfall-lib-starter";
-                };
-            };
+        meta = {
+          name = "caprinix-snowfall-lib-starter";
+          title = "Caprinix - snowfall-lib-starter";
         };
-        in lib.mkFlake {
-          outputs-builder = channels: let
-            treefmtEval = inputs.treefmt-nix.lib.evalModule channels.nixpkgs ./treefmt.nix;
-          in {
-            formatter = treefmtEval.config.build.wrapper;
-          };
-        };
+      };
+    };
+  in
+    lib.mkFlake {
+      outputs-builder = channels: let
+        treefmtEval = inputs.treefmt-nix.lib.evalModule channels.nixpkgs ./treefmt.nix;
+      in {
+        formatter = treefmtEval.config.build.wrapper;
+      };
+    };
 }
