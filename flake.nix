@@ -19,6 +19,15 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
+
+    caprinix-essentials = {
+      url = "github:caprinix/essentials";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        snowfall-lib.follows = "snowfall-lib";
+        treefmt-nix.follows = "treefmt-nix";
+      };
+    };
   };
 
   outputs = inputs: let
