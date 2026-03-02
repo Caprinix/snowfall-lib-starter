@@ -6,6 +6,13 @@
       url = "github:nixos/nixpkgs?ref=nixos-unstable";
     };
 
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
     snowfall-lib = {
       url = "github:snowfallorg/lib";
       inputs = {
